@@ -1,7 +1,6 @@
 let newStr = "";
-let stringOfNum = "252525252";
 function FakeBin(stringOfNumbers) {
-    let arrayOfNumbers = stringOfNumbers.split("");
+    let arrayOfNumbers = stringOfNumbers.toString().split("");
     arrayOfNumbers.forEach((element) => {
         if (+element < 5) {
             newStr += 0;
