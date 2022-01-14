@@ -1,5 +1,10 @@
 function descendingOrder(n) {
     //...
-    let newArray = n.toString().split("");
-    newArray.sort();
+    let arrayFromString = n.toString().split("");
+    let sortedArray = arrayFromString.sort();
+    let sortedString = "";
+    sortedArray.forEach((element) => {
+        sortedString = element + sortedString;
+    });
+    console.log(sortedString);
 }
