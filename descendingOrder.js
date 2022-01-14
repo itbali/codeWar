@@ -6,5 +6,5 @@ function descendingOrder(n) {
     sortedArray.forEach((element) => {
         sortedString = element + sortedString;
     });
-    return sortedString;
+    return +sortedString;
 }
