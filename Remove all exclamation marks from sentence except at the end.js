@@ -6,7 +6,7 @@ while (str[n] == "!") {
     newStr = str[n] + newStr;
     n--;
 }
-while (n != 0) {
+while (n >= 0) {
     if (str[n] != "!") {
         newStr = str[n] + newStr;
         n--;
@@ -14,3 +14,4 @@ while (n != 0) {
         n--;
     }
 }
+console.log(newStr);
