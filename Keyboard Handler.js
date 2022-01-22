@@ -1,16 +1,16 @@
 let is_caps = true;
 let is_shift = true;
-let Key = "a";
+let Key = "1";
 
 if (
     Key.toString().length != 1 ||
     typeof Key != "string" ||
-    (Key == Key.toUpperCase()) & (typeof +Key == "NaN")
+    (Key == Key.toUpperCase()) & isNaN(+Key)
 ) {
     console.log("KeyError");
 } else {
     if (is_shift == true) {
-        if (typeof +Key == "NaN") {
+        if (isNaN(+Key)) {
             console.log(Key.toUpperCase());
         } else {
             console.log("symbol");
