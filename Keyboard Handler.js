@@ -10,8 +10,10 @@ if (
     return "KeyError";
 } else {
     if (isShift == true) {
-        if (isNaN(+Key)) {
-            returnKey.toUpperCase();
+        if (isNaN(+Key) & (isCaps == false)) {
+            return Key.toUpperCase();
+        } else if (isNaN(+Key) & (isCaps == true)) {
+            return Key;
         } else {
             switch (Key) {
                 case "1":
