@@ -1,60 +1,104 @@
-let Key = "a";
-let isCaps = true;
-let isShift = true;
+let small = /[a-z]/;
+let numbers = /[0-9]/;
+let symbols = /[\-=\[\];'\\,.\/`]/;
 
-if (
-    Key.toString().length != 1 ||
-    typeof Key != "string" ||
-    (Key == Key.toUpperCase()) & isNaN(+Key)
-) {
-    return "KeyError";
-} else {
-    if (isShift == true) {
-        if (isNaN(+Key) & (isCaps == false)) {
-            return Key.toUpperCase();
-        } else if (isNaN(+Key) & (isCaps == true)) {
+if (small.test(Key) & (Key.length == 1)) {
+    if (isCaps) {
+        if (isShift) {
             return Key;
         } else {
-            switch (Key) {
-                case "1":
-                    return "!";
-                    break;
-                case "2":
-                    return "@";
-                    break;
-                case "3":
-                    return "#";
-                    break;
-                case "4":
-                    return "$";
-                    break;
-                case "5":
-                    return "%";
-                    break;
-                case "6":
-                    return "^";
-                    break;
-                case "7":
-                    return "&";
-                    break;
-                case "8":
-                    return "*";
-                    break;
-                case "9":
-                    return "(";
-                    break;
-                case "0":
-                    return ")";
-                    break;
-
-                default:
-                    return Key;
-                    break;
-            }
+            return Key.toUpperCase();
         }
-    } else if (isCaps == true) {
-        return Key.toString().toUpperCase();
+    } else if (isShift) {
+        return Key.toUpperCase();
     } else {
         return Key;
     }
+} else if (numbers.test(Key) & (Key.length == 1)) {
+    if (isShift) {
+        switch (Key) {
+            case "1":
+                return "!";
+                break;
+            case "2":
+                return "@";
+                break;
+            case "3":
+                return "#";
+                break;
+            case "4":
+                return "$";
+                break;
+            case "5":
+                return "%";
+                break;
+            case "6":
+                return "^";
+                break;
+            case "7":
+                return "&";
+                break;
+            case "8":
+                return "*";
+                break;
+            case "9":
+                return "(";
+                break;
+            case "0":
+                return ")";
+                break;
+
+            default:
+                return Key;
+                break;
+        }
+    } else {
+        return Key;
+    }
+} else if (symbols.test(Key) & (Key.length == 1)) {
+    if (isShift) {
+        switch (Key) {
+            case "-":
+                return "_";
+                break;
+            case "=":
+                return "+";
+                break;
+            case "[":
+                return "{";
+                break;
+            case "]":
+                return "}";
+                break;
+            case ",":
+                return "<";
+                break;
+            case ".":
+                return ">";
+                break;
+            case "/":
+                return "?";
+                break;
+            case "\\":
+                return "|";
+                break;
+            case "`":
+                return "~";
+                break;
+            case ";":
+                return ":";
+                break;
+            case "'":
+                return '"';
+                break;
+
+            default:
+                return Key;
+                break;
+        }
+    } else {
+        return Key;
+    }
+} else {
+    return "KeyError";
 }
