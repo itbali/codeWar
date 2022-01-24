@@ -1,15 +1,17 @@
 function sumOfMinimums(arr) {
-    let sum = 0;
-    let minNum = undefined;
-    arr.forEach((element) => {
-        element.forEach((number) => {
-            if (minNum > number) {
-                minNum = number;
-                console.log(number);
-            } else {
-            }
+    function sumOfMinimums(arr) {
+        let sum = 0;
+        arr.forEach((element) => {
+            let minNum = element[0];
+            element.forEach((number) => {
+                if (number < minNum) {
+                    minNum = number;
+                } else {
+                }
+                // console.log("current number: " + number + "current min: " + minNum);
+            });
+            sum += minNum;
         });
-        sum += minNum;
-        console.log(sum);
-    });
+        return sum;
+    }
 }
