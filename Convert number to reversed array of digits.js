@@ -3,7 +3,7 @@ function digitize(n) {
     let newar = [];
     let ar = n.toString().split("").reverse();
     ar.forEach((element) => {
-        newar.push(element);
+        newar.push(+element);
     });
     return newar;
 }
