@@ -9,5 +9,5 @@ function pigIt(str) {
             collar.push(element);
         }
     });
-    console.log(collar.join(" "));
+    return collar.join(" ");
 }
