@@ -4,5 +4,5 @@ const reverseSeq = (n) => {
         arr.push(n);
         n--;
     }
-    console.log(arr);
+    return arr;
 };
