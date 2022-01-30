@@ -1,13 +1,11 @@
 function findNeedle(haystack) {
-    // your code here
+    let i = 0;
+    let needlePosition = 0;
     haystack.forEach((element) => {
-        let i = 0;
-        console.log(element);
         if (element == "needle") {
-            console.log("found the needle at position " + i);
-            i++;
-        } else {
-            i++;
+            needlePosition = i;
         }
+        i++;
     });
+    return "found the needle at position " + needlePosition;
 }
