@@ -1,3 +1,1 @@
-function remainder(n, m) {
-    return n > m ? n % m : m % n;
-}
+const remainder = (n, m) => (n < m ? m % n : n % m);
