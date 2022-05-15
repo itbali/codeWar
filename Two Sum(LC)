@@ -1,0 +1,12 @@
+var twoSum = function (num, target) {
+    for (let i = 0; i < num.length; i++) {
+        let currentElement = num[i];
+        for (let j = 1; j < num.length; j++) {
+            if (currentElement + num[j] == target) {
+                return [i, j];
+            }
+        }
+    }
+};
+
+console.log(twoSum([1, 2, 3, 4], 3));
